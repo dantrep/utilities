@@ -34,8 +34,6 @@ def write_csv( contents, prefix, revise=True, separator=',',extension='.csv'):
         prefix = lst[-1]
     else:
         working_dir = os.getcwd() + '/'
-    #print 'plumbing.Write -- working dir',working_dir
-    #print 'file',prefix
     files = os.listdir(working_dir)
     header = contents[0]
     output = separator.join(header) + '\n'
@@ -51,7 +49,6 @@ def write_csv( contents, prefix, revise=True, separator=',',extension='.csv'):
             file = prefix + str(rev) + extension
     else:
         file = prefix + extension
-    
     filename = working_dir + file 
     with open(filename, "w") as out:
         out.write(output)  
